@@ -25,7 +25,7 @@ from credit_card_validator import credit_card_validator
 class Test_Credit_Card_Validator(TestCase):
     """Represents a test suite for trying to unconver bugs in Test_Credit_Card_Validator"""
     
-    def make_test_function(description, a):
+    def make_test_function(self, description, a):
         def test(self):
             self.assertTrue(credit_card_validator(a), description)
         return test
