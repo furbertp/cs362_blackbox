@@ -33,6 +33,10 @@ class Test_Credit_Card_Validator(TestCase):
         """returns random_visa_number"""
         return '4' + str(random.randint(0,999999999999999))
 
+    def random_master_card_number(self):
+        """returns random_master_card_number"""
+        pass
+
 #Main conditional
 if __name__ == "__main__":
     unittest.main()
