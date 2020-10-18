@@ -20,7 +20,6 @@ American Express
 import unittest, random
 from unittest import TestCase
 from credit_card_validator import credit_card_validator
-from random_gen import generate_mc_dic
 
 #Class Definitions
 class Test_Credit_Card_Validator(TestCase):
@@ -54,13 +53,59 @@ class Test_Credit_Card_Validator(TestCase):
 #        """returns random_master_card_number"""
 #        pass
 
+#Generate random numbers
+def generate_mc_nums():
+    """Generate mc numbers with prefixes 2221 through 2720"""
+    
+    #Create empty list
+    numbers = []
+
+    #setup loop
+    for prefix in range(2221, 2720 +1):
+        
+        #Create random number
+        random_int = random.randint(000000000000, 999999999999)
+
+        #convert int to string and attach to prefix
+        new_number = str(prefix) + str(random_int)
+
+        #append to the numbers list
+        numbers.append(new_number)
+
+    return numbers
+
+#create_dictionary
+def generate_mc_dic():
+    """generates dictionary with all the mc numbers"""
+
+    #Create empty dictionary
+    my_dict = {}
+
+    #Create counter variable
+    counter = 0
+
+    #setup loop
+    for num in generate_mc_nums():
+
+        #add num to dictionary
+        my_dict['mc_num_{}'.format(str(counter))] = num
+
+        #increment counter
+        counter = counter + 1
+
+    #return dictionary
+    return my_dict
+
 #Main conditional
 if __name__ == "__main__":
+    #Create instance of Test_Credit_Card_Validator()
+    my_tccv = Test_Credit_Card_Validator()
+
     #Create dictionary of mc card numbers with prefixes  2221-2720 inclusive
     testmap = generate_mc_dic()
 
     for name, param in testmap.items():
-        test_func - make_test_function(name, param)
+        test_func = my_tccv.make_test_function(name, param)
         klassname = 'Test_{}'.format(name)
         globals()[klassname] = type(klassname, (DynamicClassBase,),{'test_gen_{}'.format(name): test_func})
 
