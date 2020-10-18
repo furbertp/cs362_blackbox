@@ -29,6 +29,10 @@ class Test_Credit_Card_Validator(TestCase):
         """Visa Test Example"""
         self.assertTrue(credit_card_validator(self.random_visa_number()), msg='Expected {}, Recieved{}'.format(True, credit_card_validator(self.random_visa_number())))
 
+    def test_two_ccv(self):
+        """Visa Test"""
+        self.assertTrue(credit_card_validator('4521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('4521009777447437')))
+
     def random_visa_number(self):
         """returns random_visa_number"""
         return '4' + str(random.randint(0,999999999999999))
