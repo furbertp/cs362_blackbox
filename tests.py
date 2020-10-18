@@ -44,17 +44,25 @@ class Test_Credit_Card_Validator(TestCase):
         """Master Card Test"""
         self.assertTrue(credit_card_validator('5402410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('5402410866908738')))
 
-    def test_ccv_master_card_r51(self):
+    def test_ccv_master_card_5(self):
         """Master Card Test"""
         self.assertTrue(credit_card_validator('5502410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('5502410866908738')))
 
-    def test_ccv_amex(self):
+    def test_ccv_amex_1(self):
         """American Express Card Test"""
         self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
+
+    def test_ccv_amex_2(self):
+        """American Express Card Test"""
+        self.assertTrue(credit_card_validator('370954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('370954407803631')))
 
     def test_ccv_16(self):
         """Test CCV to make sure it correctly identifies a false 16 digit number"""
         self.assertFalse(credit_card_validator('0521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('0521009777447437')))
+
+    def test_ccv_15(self):
+        """Test CCV to make sure it correctly identifies a false 16 digit number"""
+        self.assertFalse(credit_card_validator('052100977744743'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('052100977744743')))
 
 #Test generator function
 def test_generator(a):
