@@ -24,11 +24,11 @@ from credit_card_validator import credit_card_validator
 #Class Definitions
 class Test_Credit_Card_Validator(TestCase):
     """Represents a test suite for trying to unconver bugs in Test_Credit_Card_Validator"""
-    
-    def make_test_function(self, description, a):
-        def test(self):
-            self.assertTrue(credit_card_validator(a), description)
-        return test
+    pass   
+#    def make_test_function(self, description, a):
+#        def test(self):
+#            self.assertTrue(credit_card_validator(a), description)
+#        return test
 
 
 #    def test_two_ccv_visa(self):
@@ -52,6 +52,14 @@ class Test_Credit_Card_Validator(TestCase):
 #    def random_master_card_number(self):
 #        """returns random_master_card_number"""
 #        pass
+mc_dict_nums = generate_mc_dic()
+
+#Test generator function
+def test_generator(a):
+    """Function that is used to generate tests"""
+    def test(self):
+        self.assertTrue(credit_card_validator(a))
+    return test
 
 #Generate random numbers
 def generate_mc_nums():
@@ -78,10 +86,10 @@ def generate_mc_nums():
 def generate_mc_dic():
     """generates dictionary with all the mc numbers"""
 
-    #Create empty dictionary
+    #create empty dictionary
     my_dict = {}
 
-    #Create counter variable
+    #create counter variable
     counter = 0
 
     #setup loop
@@ -96,18 +104,11 @@ def generate_mc_dic():
     #return dictionary
     return my_dict
 
-#Main conditional
+#main conditional
 if __name__ == "__main__":
-    #Create instance of Test_Credit_Card_Validator()
-    my_tccv = Test_Credit_Card_Validator()
-
-    #Create dictionary of mc card numbers with prefixes  2221-2720 inclusive
-    testmap = generate_mc_dic()
-
-    for name, param in testmap.items():
-        test_func = my_tccv.make_test_function(name, param)
-        klassname = 'Test_{}'.format(name)
-        globals()[klassname] = type(klassname, (DynamicClassBase,),{'test_gen_{}'.format(name): test_func})
-
+    for name, number in generate_mc_dic().items():
+        test_name = 'test_{}'.format(name)
+        test = test_generator(number)
+        setattr(Test_Credit_Card_Validator, test_name, test)
 
     unittest.main()
