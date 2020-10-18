@@ -52,6 +52,10 @@ class Test_Credit_Card_Validator(TestCase):
         """American Express Card Test"""
         self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
 
+    def test_ccv_16(self):
+        """Test CCV to make sure it correctly identifies a false 16 digit number"""
+        self.assertFalse(credit_card_validator('0521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('0521009777447437')))
+
 #Test generator function
 def test_generator(a):
     """Function that is used to generate tests"""
