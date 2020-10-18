@@ -24,17 +24,17 @@ from credit_card_validator import credit_card_validator
 #Class Definitions
 class Test_Credit_Card_Validator(TestCase):
     """Represents a test suite for trying to unconver bugs in Test_Credit_Card_Validator"""
-    pass   
-#        """Visa Test"""
-#        self.assertTrue(credit_card_validator('4521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('4521009777447437')))
+    def test_ccv_visa(self):
+        """Visa Test"""
+        self.assertTrue(credit_card_validator('4521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('4521009777447437')))
 
-#    def test_three_ccv_master_card(self):
-#        """Master Card Test"""
-#        self.assertTrue(credit_card_validator('5402410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('5402410866908738')))
+    def test_ccv_master_card(self):
+        """Master Card Test"""
+        self.assertTrue(credit_card_validator('5402410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('5402410866908738')))
 
-#    def test_four_ccv_amex(self):
-#        """American Express Card Test"""
-#        self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
+    def test_ccv_amex(self):
+        """American Express Card Test"""
+        self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
 
 #Test generator function
 def test_generator(a):
@@ -90,19 +90,4 @@ mc_dict_nums = generate_mc_dic()
 
 #main conditional
 if __name__ == "__main__":
-    test_1 = test_generator('4521009777447437') 
-    setattr(Test_Credit_Card_Validator, "Visa_test", test_1) 
-
-    test_2 = test_generator('5402410866908738') 
-    setattr(Test_Credit_Card_Validator, "MC_test", test_2) 
-
-    test_3 = test_generator('340954407803631') 
-    setattr(Test_Credit_Card_Validator, "Amex_test", test_3) 
-
-    for name, number in mc_dict_nums.items():
-        test_name = 'test_{}'.format(name)
-        test = test_generator(number)
-        setattr(Test_Credit_Card_Validator, test_name, test)
-    
-
     unittest.main()
