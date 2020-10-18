@@ -72,9 +72,17 @@ class Test_Credit_Card_Validator(TestCase):
         """Test CCV to make sure it doesn't take cc less than 15"""
         self.assertTrue(credit_card_validator("40032479899"), msg='Expected {}, Recieved{}'.format(False, credit_card_validator("40032479899")))
 
+    def test_ccv_less_than_10(self):
+        """Test CCV to make sure it doesn't take cc less than 10"""
+        self.assertTrue(credit_card_validator("123456789"), msg='Expected {}, Recieved{}'.format(False, credit_card_validator("123456789")))
+
     def test_ccv_more_than_16(self):
         """Test CCV to make sure it doesn't take cc more than 16"""
         self.assertTrue(credit_card_validator("400324798991234567"), msg='Expected {}, Recieved{}'.format(False, credit_card_validator("400324798991234567")))
+
+    def test_ccv_more_than_19(self):
+        """Test CCV to make sure it doesn't take cc more than 16"""
+        self.assertTrue(credit_card_validator("40032479899123456789"), msg='Expected {}, Recieved{}'.format(False, credit_card_validator("40032479899123456789")))
 
 #Test generator function
 def test_generator(a):
