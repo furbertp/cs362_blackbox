@@ -57,7 +57,7 @@ class Test_Credit_Card_Validator(TestCase):
 def test_generator(a):
     """Function that is used to generate tests"""
     def test(self):
-        self.assertTrue(credit_card_validator(a))
+        self.assertTrue(credit_card_validator(a), msg='Card Number = {}'.format(a))
     return test
 
 #Generate random numbers
