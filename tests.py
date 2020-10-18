@@ -48,6 +48,10 @@ class Test_Credit_Card_Validator(TestCase):
         """Master Card Test"""
         self.assertTrue(credit_card_validator('5502410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('5502410866908738')))
 
+    def test_ccv_master_card_6(self):
+        """Master Card Test"""
+        self.assertTrue(credit_card_validator('2221410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('2221410866908738')))
+
     def test_ccv_amex_1(self):
         """American Express Card Test"""
         self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
