@@ -17,7 +17,7 @@ American Express
 """
 
 #Required Modules
-import unittest
+import unittest, random
 from unittest import TestCase
 from credit_card_validator import credit_card_validator
 
@@ -27,9 +27,11 @@ class Test_Credit_Card_Validator(TestCase):
 
     def test_one_ccv(self):
         """Visa Test Example"""
+        self.assertTrue(credit_card_validator(random_visa_number()), msg='Expected {}, Recieved{}'.format(True, credit_card_validator(random_visa_number())))
 
-    
-
+    def random_visa_number(self):
+        """returns random_visa_number"""
+        return '4' + random.randint(0,999999999999999)
 
 #Main conditional
 if __name__ == "__main__":
