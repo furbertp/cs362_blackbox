@@ -33,6 +33,16 @@ class Test_Credit_Card_Validator(TestCase):
         """Visa Test"""
         self.assertTrue(credit_card_validator('4521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('4521009777447437')))
 
+    def test_three_ccv(self):
+        """Master Card Test"""
+        self.assertTrue(credit_card_validator('5402410866908738'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('5402410866908738')))
+
+    def test_four_ccv(self):
+        """American Express Card Test"""
+        self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
+
+
+
     def random_visa_number(self):
         """returns random_visa_number"""
         return '4' + str(random.randint(0,999999999999999))
