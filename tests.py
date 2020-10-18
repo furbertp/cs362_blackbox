@@ -31,7 +31,7 @@ class Test_Credit_Card_Validator(TestCase):
 
     def random_visa_number(self):
         """returns random_visa_number"""
-        return '4' + random.randint(0,999999999999999)
+        return '4' + str(random.randint(0,999999999999999))
 
 #Main conditional
 if __name__ == "__main__":
