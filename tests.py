@@ -90,11 +90,6 @@ mc_dict_nums = generate_mc_dic()
 
 #main conditional
 if __name__ == "__main__":
-    for name, number in mc_dict_nums.items():
-        test_name = 'test_{}'.format(name)
-        test = test_generator(number)
-        setattr(Test_Credit_Card_Validator, test_name, test)
-    
     test_1 = test_generator('4521009777447437') 
     setattr(Test_Credit_Card_Validator, "Visa_test", test_1) 
 
@@ -103,5 +98,11 @@ if __name__ == "__main__":
 
     test_3 = test_generator('340954407803631') 
     setattr(Test_Credit_Card_Validator, "Amex_test", test_3) 
+
+    for name, number in mc_dict_nums.items():
+        test_name = 'test_{}'.format(name)
+        test = test_generator(number)
+        setattr(Test_Credit_Card_Validator, test_name, test)
+    
 
     unittest.main()
