@@ -25,13 +25,6 @@ from credit_card_validator import credit_card_validator
 class Test_Credit_Card_Validator(TestCase):
     """Represents a test suite for trying to unconver bugs in Test_Credit_Card_Validator"""
     pass   
-#    def make_test_function(self, description, a):
-#        def test(self):
-#            self.assertTrue(credit_card_validator(a), description)
-#        return test
-
-
-#    def test_two_ccv_visa(self):
 #        """Visa Test"""
 #        self.assertTrue(credit_card_validator('4521009777447437'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('4521009777447437')))
 
@@ -42,16 +35,6 @@ class Test_Credit_Card_Validator(TestCase):
 #    def test_four_ccv_amex(self):
 #        """American Express Card Test"""
 #        self.assertTrue(credit_card_validator('340954407803631'), msg='Expected {}, Recieved{}'.format(True, credit_card_validator('340954407803631')))
-
-
-
-#    def random_visa_number(self):
-#        """returns random_visa_number"""
-#        return '4' + str(random.randint(0,999999999999999))
-
-#    def random_master_card_number(self):
-#        """returns random_master_card_number"""
-#        pass
 
 #Test generator function
 def test_generator(a):
@@ -111,5 +94,14 @@ if __name__ == "__main__":
         test_name = 'test_{}'.format(name)
         test = test_generator(number)
         setattr(Test_Credit_Card_Validator, test_name, test)
+    
+    test_1 = test_generator('4521009777447437') 
+    setattr(Test_Credit_Card_Validator, "Visa_test", test_1) 
+
+    test_2 = test_generator('5402410866908738') 
+    setattr(Test_Credit_Card_Validator, "MC_test", test_2) 
+
+    test_3 = test_generator('340954407803631') 
+    setattr(Test_Credit_Card_Validator, "Amex_test", test_3) 
 
     unittest.main()
