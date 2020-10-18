@@ -106,7 +106,7 @@ def generate_mc_dic():
 
 #main conditional
 if __name__ == "__main__":
-    for name, number in generate_mc_dic().items():
+    for name, number in mc_dict_nums.items():
         test_name = 'test_{}'.format(name)
         test = test_generator(number)
         setattr(Test_Credit_Card_Validator, test_name, test)
