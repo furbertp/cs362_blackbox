@@ -52,7 +52,6 @@ class Test_Credit_Card_Validator(TestCase):
 #    def random_master_card_number(self):
 #        """returns random_master_card_number"""
 #        pass
-mc_dict_nums = generate_mc_dic()
 
 #Test generator function
 def test_generator(a):
@@ -103,6 +102,8 @@ def generate_mc_dic():
 
     #return dictionary
     return my_dict
+
+mc_dict_nums = generate_mc_dic()
 
 #main conditional
 if __name__ == "__main__":
