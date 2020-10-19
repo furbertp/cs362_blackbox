@@ -210,12 +210,19 @@ class Test_Credit_Card_Validator(TestCase):
         """test 16 digit visa with correct checksum"""
         self.assertTrue(credit_card_validator("3052380846991740"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("3052380846991740")))
 
+    def test_ccv_visa_incorrect_cs_16_digits_3(self):
+        """test 16 digit visa with incorrect checksum"""
+        self.assertTrue(credit_card_validator("3052380841991740"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("3052380841991740")))
+
 
     #Below 4
     def test_ccv_visa_correct_cs_16_digits_5(self):
         """test 16 digit visa with correct checksum"""
         self.assertTrue(credit_card_validator("5052380846990572"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("5052380846990572")))
 
+    def test_ccv_visa_incorrect_cs_16_digits_5(self):
+        """test 16 digit visa with incorrect checksum"""
+        self.assertTrue(credit_card_validator("5052380845990572"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("5052380845990572")))
 
 
     #MasterCard 16 digits
@@ -228,6 +235,9 @@ class Test_Credit_Card_Validator(TestCase):
         """test 16 digit mc with correct checksum"""
         self.assertTrue(credit_card_validator("6052380846990414"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("6052380846990414")))
     
+    def test_ccv_mc_incorrect_cs_16_digits_gt_54(self):
+        """test 16 digit mc with incorrect checksum"""
+        self.assertTrue(credit_card_validator("6052310846990414"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("6052310846990414")))
 
 
     #Below 2221
@@ -235,11 +245,18 @@ class Test_Credit_Card_Validator(TestCase):
         """test 16 digit mc with correct checksum"""
         self.assertTrue(credit_card_validator("2220380846990758"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("2220380846990758")))
 
+    def test_ccv_mc_incorrect_cs_16_digits_lt_2221(self):
+        """test 16 digit mc with incorrect checksum"""
+        self.assertTrue(credit_card_validator("2220310846990758"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("2220310846990758")))
 
     #Above 2720
     def test_ccv_mc_correct_cs_16_digits_gt_2270(self):
         """test 16 digit mc with correct checksum"""
         self.assertTrue(credit_card_validator("2721380846990687"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("2721380846990687")))
+    
+    def test_ccv_mc_incorrect_cs_16_digits_gt_2270(self):
+        """test 16 digit mc with incorrect checksum"""
+        self.assertTrue(credit_card_validator("2721310846990687"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("2721310846990687")))
 
 
 
@@ -249,6 +266,10 @@ class Test_Credit_Card_Validator(TestCase):
     def test_ccv_amex_correct_cs_15_digits_lt_34(self):
         """test 15 digit amex with correct checksum"""
         self.assertTrue(credit_card_validator("332138084699682"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("332138084699682")))
+    
+    def test_ccv_amex_incorrect_cs_15_digits_lt_34(self):
+        """test 15 digit amex with incorrect checksum"""
+        self.assertTrue(credit_card_validator("332131084699682"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("332131084699682")))
 
 
     #Between 34 - 37
@@ -256,12 +277,18 @@ class Test_Credit_Card_Validator(TestCase):
         """test 15 digit amex with correct checksum"""
         self.assertTrue(credit_card_validator("352138084699406"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("352138084699406")))
 
+    def test_ccv_amex_incorrect_cs_15_digits_34_37(self):
+        """test 15 digit amex with incorrect checksum"""
+        self.assertTrue(credit_card_validator("352138084899406"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("352138084899406")))
 
     #Above 37
     def test_ccv_amex_correct_cs_15_digits_gt_37(self):
         """test 15 digit amex with correct checksum"""
         self.assertTrue(credit_card_validator("382138084699491"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("382138084699491")))
 
+    def test_ccv_amex_incorrect_cs_15_digits_gt_37(self):
+        """test 15 digit amex with incorrect checksum"""
+        self.assertTrue(credit_card_validator("382131084699491"), msg='Expected {}, Recieved {}'.format(True, credit_card_validator("382131084699491")))
 
 
 
