@@ -5,11 +5,12 @@
 # Testing included correct and incorrect checksums. Checked empty string ini
 # validator. Checked all prefix ranges and out of all prefix ranges. 
 
-
 # Required Modules
-import unittest, random
+import unittest
+import random
 from unittest import TestCase
 from credit_card_validator import credit_card_validator
+
 
 # Class Definitions
 class Test_Credit_Card_Validator(TestCase):
@@ -35,7 +36,7 @@ class Test_Credit_Card_Validator(TestCase):
         self.assertTrue(credit_card_validator('340954407803631'),
                         msg='Expected {}, Recieved{}'.format(True,
                         credit_card_validator('340954407803631')))
-    
+
     # bug4
     def test_ccv_amex_2(self):
         """American Express Card Test"""
@@ -188,7 +189,6 @@ class Test_Credit_Card_Validator(TestCase):
                         msg='Expected {}, Recieved {}'.format(False,
                         credit_card_validator("53604406236453043")))
 
-
 # AMEX 34 Range
 
     def test_ccv_amex_correct_cs_14_digits_34(self):
@@ -226,7 +226,6 @@ class Test_Credit_Card_Validator(TestCase):
         self.assertTrue(credit_card_validator("3481445374301548"),
                         msg='Expected {}, Recieved {}'.format(False,
                         credit_card_validator("3481445374301548")))
-
 
 # AMEX 37 Range
 
@@ -283,7 +282,6 @@ class Test_Credit_Card_Validator(TestCase):
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("3052380841991740")))
 
-
     # Below 4
     def test_ccv_visa_correct_cs_16_digits_5(self):
         """test 16 digit visa with correct checksum"""
@@ -296,7 +294,6 @@ class Test_Credit_Card_Validator(TestCase):
         self.assertTrue(credit_card_validator("5052380845990572"),
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("5052380845990572")))
-
 
     # MasterCard 16 digits
 
@@ -343,8 +340,6 @@ class Test_Credit_Card_Validator(TestCase):
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("2721310846990687")))
 
-
-
     # Amex 15 digits
 
     # Below 34
@@ -359,7 +354,6 @@ class Test_Credit_Card_Validator(TestCase):
         self.assertTrue(credit_card_validator("332131084699682"),
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("332131084699682")))
-
 
     # Between 34 - 37
     def test_ccv_amex_correct_cs_15_digits_34_37(self):
@@ -386,7 +380,6 @@ class Test_Credit_Card_Validator(TestCase):
         self.assertTrue(credit_card_validator("382131084699491"),
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("382131084699491")))
-
 
     # my own random tests
     def all_zeros_15(self):
