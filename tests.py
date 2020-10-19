@@ -337,6 +337,17 @@ class Test_Credit_Card_Validator(TestCase):
                         msg='Expected {}, Recieved {}'.format(True, credit_card_validator("382131084699491")))
 
 
+    # my own random tests
+    def all_zeros_15(self):
+        """test all zeros for length 15"""
+        self.assertTrue(credit_card_validator("000000000000000"),
+                        msg='Expected {}, Recieved {}'.format(True, credit_card_validator("000000000000000")))
+        
+    def all_zeros_16(self):
+        """test all zeros for length 15"""
+        self.assertTrue(credit_card_validator("0000000000000000"),
+                        msg='Expected {}, Recieved {}'.format(True, credit_card_validator("0000000000000000")))
+
 # main conditional
 if __name__ == "__main__":
     unittest.main()
