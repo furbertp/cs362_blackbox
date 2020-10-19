@@ -84,6 +84,25 @@ class Test_Credit_Card_Validator(TestCase):
         """Test CCV to make sure it doesn't take cc more than 16"""
         self.assertTrue(credit_card_validator("40032479899123456789"), msg='Expected {}, Recieved{}'.format(False, credit_card_validator("40032479899123456789")))
 
+    def test_ccv_length_zero(self):
+        """Test an empty string"""
+        self.assertTrue(credit_card_validator(""), msg='Expected {}, Recieved {}'.format(False, credit_card_validator("")))
+
+    def test_ccv_length_one(self):
+        """Test a one digit string"""
+        self.assertTrue(credit_card_validator("0"), msg='Expected {}, Recieved {}'.format(False, credit_card_validator("0")))
+    
+    def test_ccv_2_visa_correct_cs(self):
+        """test a two digit visa with correct checksum"""
+        self.assertTrue(credit_card_validator("42"), msg='Expected {}, Recieved {}'.format(False, credit_card_validator("42")))
+
+    def test_ccv_2_visa_incorrect_cs(self):
+        """test a two digit visa with incorrect checksum"""
+        self.assertTrue(credit_card_validator("46"), msg='Expected {}, Recieved {}'.format(False, credit_card_validator("46")))
+
+    def test_ccv_2_amex_correct_cs(self):
+        """test a two digit amex with correct checksum"""
+        self.assertTrue(credit_card_validator("34"), msg='Expected {}, Recieved {}'.format(False, credit_card_validator("34")))
 #Test generator function
 def test_generator(a):
     """Function that is used to generate tests"""
