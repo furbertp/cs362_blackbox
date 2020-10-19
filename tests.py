@@ -313,7 +313,6 @@ class Test_Credit_Card_Validator(TestCase):
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("6052310846990414")))
 
-
     # Below 2221
     def test_ccv_mc_correct_cs_16_digits_lt_2221(self):
         """test 16 digit mc with correct checksum"""
