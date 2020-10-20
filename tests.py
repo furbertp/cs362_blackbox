@@ -392,6 +392,127 @@ class Test_Credit_Card_Validator(TestCase):
         self.assertTrue(credit_card_validator("0000000000000000"),
                         msg='Expected {}, Recieved {}'.format(True,
                         credit_card_validator("0000000000000000")))
+    
+    # Last Resort
+    def test_1(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("339582641610117"))
+
+    def test_2(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("339582641611117"))
+
+    def test_3(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("359582641610138"))
+
+    def test_4(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("359582641611138"))
+    
+    def test_5(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("369582641610128"))
+    
+    def test_6(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("369582641611128"))
+    
+    def test_7(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("389582641610199"))
+    
+    def test_8(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("389582641612199"))
+
+    def test_9(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5097191570140418"))
+
+    def test_10(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5097191570141418"))
+
+    def test_11(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5697191570140248"))
+
+    def test_12(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5697191570141248"))
+    
+    def test_13(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5797191570140106"))
+    
+    def test_14(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5797191570141106"))
+    
+    def test_15(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5897191570140121"))
+    
+    def test_16(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("5897191572140121"))
+
+    def test_17(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2121191570140118"))
+
+    def test_18(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2121191570141118"))
+
+    def test_19(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2211191570140358"))
+
+    def test_20(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2211191570141358"))
+
+    def test_21(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2220191570140340"))
+
+    def test_22(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2220191570110340"))
+
+    def test_23(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("1221191570140184"))
+
+    def test_24(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("1221191570141184"))
+
+    def test_25(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2820191570140211"))
+
+    def test_26(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2820191570141211"))
+
+    def test_27(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2780191570140110"))
+
+    def test_28(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2780191570141110"))
+
+    def test_29(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2721191570140088"))
+
+    def test_30(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2721191570141088"))
 
 # main conditional
 if __name__ == "__main__":
