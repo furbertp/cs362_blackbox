@@ -514,6 +514,14 @@ class Test_Credit_Card_Validator(TestCase):
         """quick testing"""
         self.assertTrue(credit_card_validator("2721191570141088"))
 
+    def test_31(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2720999999999996"))
+    
+    def test_32(self):
+        """quick testing"""
+        self.assertTrue(credit_card_validator("2221000000000009"))
+
 # main conditional
 if __name__ == "__main__":
     unittest.main()
